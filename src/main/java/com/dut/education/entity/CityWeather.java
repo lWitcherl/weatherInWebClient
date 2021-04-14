@@ -1,13 +1,41 @@
 package com.dut.education.entity;
 
 public class CityWeather {
+    private int cityId;
     private String name;
     private float temp;
     private float feelsLike;
     private String time;
     private String weather;
+    private int humidity;
+    private String icon;
+
 
     public CityWeather() {
+    }
+
+    public int getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(int cityId) {
+        this.cityId = cityId;
+    }
+
+    public int getHumidity() {
+        return humidity;
+    }
+
+    public void setHumidity(int humidity) {
+        this.humidity = humidity;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 
     public String getName() {
