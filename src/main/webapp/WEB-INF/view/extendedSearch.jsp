@@ -1,18 +1,19 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html style="font-size: 16px;">
   <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta charset="utf-8">
-      <meta name="keywords" content="INTUITIVE">
-      <meta name="description" content="">
-      <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>weather</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="INTUITIVE">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>extendedSearch</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/nicepage.css" media="screen">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/weather.css" media="screen">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/extendedSearch.css" media="screen">
     <script class="u-script" type="text/javascript" src="${pageContext.request.contextPath}/resources/query/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="${pageContext.request.contextPath}/resources/query/nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 3.11.0, nicepage.com">
@@ -26,10 +27,10 @@
 		"url": "index.html",
 		"logo": "images/image1.png"
 }</script>
-    <meta property="og:title" content="weather">
+    <meta property="og:title" content="extendedSearch">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#478ac9">
-    <link rel="canonical" href="${pageContext.request.contextPath}">
+    <link rel="canonical" href="index.html">
     <meta property="og:url" content="index.html">
   </head>
   <body class="u-body u-overlap"><header class="u-border-1 u-border-custom-color-3 u-clearfix u-header u-header" id="sec-b41"><div class="u-clearfix u-sheet u-sheet-1">
@@ -63,35 +64,52 @@
           </div>
         </nav>
       </div></header>
-    <section class="u-align-left u-clearfix u-image u-section-1" id="sec-f06b" data-image-width="1600" data-image-height="1067">
+    <section class="u-clearfix u-image u-section-1" id="sec-f06b" data-image-width="1600" data-image-height="1067">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-clearfix u-gutter-0 u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            <div class="u-layout-row">
-              <div class="u-container-style u-layout-cell u-shape-rectangle u-size-9 u-layout-cell-1">
-                <div class="u-container-layout u-container-layout-1"></div>
-              </div>
-              <div class="u-container-style u-layout-cell u-size-51 u-layout-cell-2">
-                <div class="u-container-layout u-valign-top u-container-layout-2">
-                  <div class="u-container-style u-group u-group-1">
-                    <div class="u-container-layout u-container-layout-3">
-                      <h2 class="u-align-center u-text u-text-palette-1-light-2 u-text-1">${weather.name} ${weather.region}</h2>
-                      <h3 class="u-align-center u-text u-text-grey-40 u-text-2">${weather.time}</h3>
-                      <h4 class="u-align-center u-text u-text-grey-15 u-text-3">Температура&nbsp;${weather.temp}C</h4>
-                      <h4 class="u-align-center u-text u-text-grey-15 u-text-4">По ощущениям ${weather.feelsLike}C</h4>
-                      <h4 class="u-align-center u-text u-text-grey-15 u-text-5">Влажность ${weather.humidity}%</h4>
-                      <h4 class="u-align-center u-text u-text-grey-15 u-text-5">Осадки ${weather.precipitation}mm</h4>
-                    </div>
-                  </div>
-                  <div class="u-container-style u-group u-group-2">
-                    <div class="u-container-layout u-container-layout-4">
-                      <img src="${pageContext.request.contextPath}/resources/image/imgWeather/${weather.icon}.jpg" alt="" class="u-align-center u-image u-image-round u-radius-31 u-image-1" data-image-width="1280" data-image-height="853">
-                      <h4 class="u-align-center u-text u-text-grey-15 u-text-6">${weather.weather} облака:${weather.clouds}%</h4>
-                    </div>
-                  </div>
+        <h3 class="u-align-center u-text u-text-palette-1-light-2 u-text-1">Расширенный поиск</h3>
+        <h6 class="u-align-center u-text u-text-2" ${hidden} ">Результат предыдущего :<span class="u-text-palette-2-light-2"> ${error}</span>
+        </h6>
+        <div class="u-container-style u-group u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <div class="u-form u-form-1">
+              <form action="search" method="get" class="u-clearfix u-form-horizontal u-form-spacing-15 u-inner-form" style="padding: 15px;" source="custom">
+                <div class="u-form-group u-form-name">
+                  <label for="name-ef64" class="u-form-control-hidden u-label"></label>
+                  <input type="text" placeholder="долгота" id="name-ef64" name="lon" class="u-border-1 u-border-grey-30 u-custom-color-3 u-input u-input-rectangle u-input-1" required="">
                 </div>
-              </div>
+                <div class="u-form-email u-form-group">
+                  <label for="email-ef64" class="u-form-control-hidden u-label"></label>
+                  <input type="text" placeholder="широта" id="email-ef64" name="lat" class="u-border-1 u-border-grey-30 u-custom-color-3 u-input u-input-rectangle u-input-2" required="">
+                </div>
+                <div class="u-form-group u-form-submit">
+                  <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-custom-color-5 u-hover-custom-color-3 u-radius-25 u-btn-1">поиск</a>
+                  <input type="submit" value="submit" class="u-form-control-hidden">
+                </div>
+               <%-- <div class="u-form-send-message u-form-send-success">#FormSendSuccess</div>
+                <div class="u-form-send-error u-form-send-message">#FormSendError</div>
+                <input type="hidden" value="" name="recaptchaResponse">--%>
+              </form>
             </div>
+            <div class="u-form u-form-2">
+              <form action="search" method="get" class="u-clearfix u-form-horizontal u-form-spacing-15 u-inner-form" style="padding: 15px;" source="custom">
+                <div class="u-form-group u-form-name">
+                  <label for="name-ef64" class="u-form-control-hidden u-label"></label>
+                  <input type="text" placeholder="город" id="name-ef64" name="city" class="u-border-1 u-border-grey-30 u-custom-color-3 u-input u-input-rectangle u-input-3" required="">
+                </div>
+                <div class="u-form-email u-form-group">
+                  <label for="email-ef64" class="u-form-control-hidden u-label"></label>
+                  <input type="text" placeholder="индификаро старны (пр.:ua)" id="email-ef64" name="region" class="u-border-1 u-border-grey-30 u-custom-color-3 u-input u-input-rectangle u-input-4" required="">
+                </div>
+                <div class="u-form-group u-form-submit">
+                  <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-custom-color-5 u-hover-custom-color-3 u-radius-25 u-btn-2">поиск</a>
+                  <input type="submit" value="submit" class="u-form-control-hidden">
+                </div>
+                <%--<div class="u-form-send-message u-form-send-success">#FormSendSuccess</div>
+                <div class="u-form-send-error u-form-send-message">#FormSendError</div>
+                <input type="hidden" value="" name="recaptchaResponse">--%>
+              </form>
+            </div>
+            <h4 class="u-text u-text-default u-text-palette-1-light-3 u-text-3">по координатам</h4>
           </div>
         </div>
       </div>

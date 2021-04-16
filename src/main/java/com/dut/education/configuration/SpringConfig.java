@@ -28,10 +28,10 @@ public class SpringConfig implements WebMvcConfigurer {//extends WebMvcConfigura
         internalResourceViewResolver.setSuffix(".jsp");
         return internalResourceViewResolver;
     }
-
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
     }
+
 
 }

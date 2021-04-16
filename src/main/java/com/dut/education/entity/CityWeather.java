@@ -3,15 +3,41 @@ package com.dut.education.entity;
 public class CityWeather {
     private int cityId;
     private String name;
+    private String region;
     private float temp;
     private float feelsLike;
     private String time;
     private String weather;
     private int humidity;
+    private int clouds;
+    private double precipitation;
     private String icon;
 
-
     public CityWeather() {
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public int getClouds() {
+        return clouds;
+    }
+
+    public void setClouds(int clouds) {
+        this.clouds = clouds;
+    }
+
+    public double getPrecipitation() {
+        return precipitation;
+    }
+
+    public void setPrecipitation(double precipitation) {
+        this.precipitation = precipitation;
     }
 
     public int getCityId() {
@@ -81,11 +107,17 @@ public class CityWeather {
     @Override
     public String toString() {
         return "CityWeather{" +
-                "name='" + name + '\'' +
+                "cityId=" + cityId +
+                ", name='" + name + '\'' +
+                ", region='" + region + '\'' +
                 ", temp=" + temp +
                 ", feelsLike=" + feelsLike +
-                ", time=" + time +
+                ", time='" + time + '\'' +
                 ", weather='" + weather + '\'' +
+                ", humidity=" + humidity +
+                ", clouds=" + clouds +
+                ", precipitation=" + precipitation +
+                ", icon='" + icon + '\'' +
                 '}';
     }
 }

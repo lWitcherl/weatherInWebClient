@@ -2,7 +2,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html style="font-size: 16px;">
 <head>
@@ -12,14 +14,10 @@
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
     <title>main</title>
-    <spring:url value="/resources/css/nicepage.css" var="nicepage"/>
-    <spring:url value="/resources/css/main.css" var="main"/>
-    <spring:url value="/resources/query/jquery.js" var="jq"/>
-    <spring:url value="/resources/query/nicepage.js" var="njs"/>
-    <link href="${nicepage}" rel="stylesheet" />
-    <link href="${main}" rel="stylesheet" />
-    <script class="u-script" type="text/javascript" src="${jq}" defer=""></script>
-    <script class="u-script" type="text/javascript" src="${njs}" defer=""></script>
+    <link href="${pageContext.request.contextPath}/resources/css/nicepage.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/resources/css/main.css" rel="stylesheet" />
+    <script class="u-script" type="text/javascript" src="${pageContext.request.contextPath}/resources/query/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="${pageContext.request.contextPath}/resources/query/nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 3.11.0, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
 
@@ -34,11 +32,11 @@
     <meta property="og:title" content="main">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#478ac9">
-    <link rel="canonical" href="index.html">
+    <link rel="canonical" href="${pageContext.request.contextPath}">
     <meta property="og:url" content="index.html">
 </head>
 <body class="u-body u-overlap"><header class="u-border-1 u-border-custom-color-3 u-clearfix u-header u-header" id="sec-b41"><div class="u-clearfix u-sheet u-sheet-1">
-    <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="600" data-image-height="200">
+    <a href="${pageContext.request.contextPath}" class="u-image u-logo u-image-1" data-image-width="600" data-image-height="200">
         <img src="${pageContext.request.contextPath}/resources/image/image1.png" class="u-logo-image u-logo-image-1" data-image-width="184">
     </a>
     <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
@@ -51,7 +49,7 @@
             </a>
         </div>
         <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-1-base" href="main.html" style="padding: 10px 48px;">Главная</a>
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-1-base" href="${pageContext.request.contextPath}" style="padding: 10px 48px;">Главная</a>
             </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-1-base" style="padding: 10px 48px;">Профиль</a>
             </li></ul>
         </div>
@@ -59,7 +57,7 @@
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
                 <div class="u-sidenav-overflow">
                     <div class="u-menu-close"></div>
-                    <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="main.html" style="padding: 10px 48px;">Главная</a>
+                    <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="${pageContext.request.contextPath}" style="padding: 10px 48px;">Главная</a>
                     </li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 48px;">Профиль</a>
                     </li></ul>
                 </div>
@@ -74,7 +72,7 @@
             <form action="search" method="GET" class="u-clearfix u-form-custom-backend u-form-horizontal u-form-spacing-10 u-inner-form" style="padding: 10px" source="custom" name="form" redirect="true">
                 <div class="u-form-group u-form-group-1">
                     <label for="email-2555" class="u-form-control-hidden u-label u-label-1"></label>
-                    <input type="text" placeholder="Введите название города" id="email-2555" name="city" class="u-border-1 u-border-white u-custom-color-3 u-input u-input-rectangle u-radius-50" required="required">
+                    <input type="text"  placeholder="Введите название города" id="email-2555" name="city" class="u-border-1 u-border-white u-custom-color-3 u-input u-input-rectangle u-radius-50" required="required">
                 </div>
                 <div class="u-align-left u-form-group u-form-submit">
                     <a href="#" class="u-btn u-btn-submit u-button-style u-none u-text-white u-btn-1">
