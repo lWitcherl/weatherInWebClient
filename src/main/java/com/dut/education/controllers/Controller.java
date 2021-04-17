@@ -31,8 +31,9 @@ public class Controller {
     public String search(HttpServletRequest request,Model model) throws NoSuchCityException{
         CityWeather cityWeather;
         if(request.getParameter("lon")!=null){
-            double lon = Double.parseDouble(request.getParameter("lon"));
-            double lat = Double.parseDouble(request.getParameter("lon"));
+            double lon = Double.parseDouble(request.getParameter("lon").replace(",","."));
+            double lat = Double.parseDouble(request.getParameter("lat").replace(",","."));
+            System.out.println(lon+" "+lat +" ---");
             cityWeather = communication.getCityWeather(lon,lat);
         }else if (request.getParameter("region")!=null){
             String city = translatorHandler.reformatTypeCharacters(request.getParameter("city"));
@@ -45,8 +46,7 @@ public class Controller {
         System.out.println(cityWeather);
         return "weather";
     }
-    /*@GetMapping("/search")
-    public String search(HttpServletRequest request,Model model) throws NoSuchCityException{*/
+
 
     @GetMapping("/extendedSearch")
     public String extendSearch(Model model){

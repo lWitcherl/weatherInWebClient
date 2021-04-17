@@ -11,7 +11,7 @@
     <meta name="keywords" content="INTUITIVE">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>extendedSearch</title>
+    <title>Расширенный поиск</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/nicepage.css" media="screen">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/extendedSearch.css" media="screen">
     <script class="u-script" type="text/javascript" src="${pageContext.request.contextPath}/resources/query/jquery.js" defer=""></script>
@@ -69,49 +69,49 @@
         <h3 class="u-align-center u-text u-text-palette-1-light-2 u-text-1">Расширенный поиск</h3>
         <h6 class="u-align-center u-text u-text-2" ${hidden} ">Результат предыдущего :<span class="u-text-palette-2-light-2"> ${error}</span>
         </h6>
-        <div class="u-container-style u-group u-group-1">
-          <div class="u-container-layout u-container-layout-1">
-            <div class="u-form u-form-1">
-              <form action="search" method="get" class="u-clearfix u-form-horizontal u-form-spacing-15 u-inner-form" style="padding: 15px;" source="custom">
-                <div class="u-form-group u-form-name">
-                  <label for="name-ef64" class="u-form-control-hidden u-label"></label>
-                  <input type="text" placeholder="долгота" id="name-ef64" name="lon" class="u-border-1 u-border-grey-30 u-custom-color-3 u-input u-input-rectangle u-input-1" required="">
-                </div>
-                <div class="u-form-email u-form-group">
-                  <label for="email-ef64" class="u-form-control-hidden u-label"></label>
-                  <input type="text" placeholder="широта" id="email-ef64" name="lat" class="u-border-1 u-border-grey-30 u-custom-color-3 u-input u-input-rectangle u-input-2" required="">
-                </div>
-                <div class="u-form-group u-form-submit">
-                  <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-custom-color-5 u-hover-custom-color-3 u-radius-25 u-btn-1">поиск</a>
-                  <input type="submit" value="submit" class="u-form-control-hidden">
-                </div>
-               <%-- <div class="u-form-send-message u-form-send-success">#FormSendSuccess</div>
-                <div class="u-form-send-error u-form-send-message">#FormSendError</div>
-                <input type="hidden" value="" name="recaptchaResponse">--%>
-              </form>
-            </div>
-            <div class="u-form u-form-2">
-              <form action="search" method="get" class="u-clearfix u-form-horizontal u-form-spacing-15 u-inner-form" style="padding: 15px;" source="custom">
-                <div class="u-form-group u-form-name">
-                  <label for="name-ef64" class="u-form-control-hidden u-label"></label>
-                  <input type="text" placeholder="город" id="name-ef64" name="city" class="u-border-1 u-border-grey-30 u-custom-color-3 u-input u-input-rectangle u-input-3" required="">
-                </div>
-                <div class="u-form-email u-form-group">
-                  <label for="email-ef64" class="u-form-control-hidden u-label"></label>
-                  <input type="text" placeholder="индификаро старны (пр.:ua)" id="email-ef64" name="region" class="u-border-1 u-border-grey-30 u-custom-color-3 u-input u-input-rectangle u-input-4" required="">
-                </div>
-                <div class="u-form-group u-form-submit">
-                  <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-custom-color-5 u-hover-custom-color-3 u-radius-25 u-btn-2">поиск</a>
-                  <input type="submit" value="submit" class="u-form-control-hidden">
-                </div>
-                <%--<div class="u-form-send-message u-form-send-success">#FormSendSuccess</div>
-                <div class="u-form-send-error u-form-send-message">#FormSendError</div>
-                <input type="hidden" value="" name="recaptchaResponse">--%>
-              </form>
-            </div>
-            <h4 class="u-text u-text-default u-text-palette-1-light-3 u-text-3">по координатам</h4>
+          <div class="u-container-style u-group u-group-1">
+              <div class="u-container-layout u-container-layout-1">
+                  <div class="u-form u-form-1">
+                      <form action="search" method="get" class="u-clearfix u-form-custom-backend u-form-horizontal u-form-spacing-15 u-inner-form" style="padding: 15px;" source="custom" redirect="true">
+                          <div class="u-form-group u-form-name">
+                              <label for="name-ef64" class="u-form-control-hidden u-label">Name</label>
+                              <input type="text" placeholder="долгота" id="name-ef64" name="lon" class="u-border-1 u-border-grey-30 u-custom-color-3 u-input u-input-rectangle u-input-1" required="">
+                          </div>
+                          <div class="u-form-group">
+                              <label for="email-ef64" class="u-form-control-hidden u-label">Email</label>
+                              <input type="text" placeholder="широта" id="email-ef64" name="lat" class="u-border-1 u-border-grey-30 u-custom-color-3 u-input u-input-rectangle u-input-2" required="required">
+                          </div>
+                          <div class="u-form-group u-form-submit">
+                              <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-custom-color-5 u-hover-custom-color-3 u-radius-25 u-btn-1">поиск</a>
+                              <input type="submit" value="submit" class="u-form-control-hidden">
+                          </div>
+                          <div class="u-form-send-message u-form-send-success">#FormSendSuccess</div>
+                          <div class="u-form-send-error u-form-send-message">#FormSendError</div>
+                          <input type="hidden" value="" name="recaptchaResponse">
+                      </form>
+                  </div>
+                  <h4 class="u-text u-text-palette-1-light-3 u-text-3">по координатам</h4>
+                  <div class="u-form u-form-2">
+                      <form action="search" method="get" class="u-clearfix u-form-custom-backend u-form-horizontal u-form-spacing-15 u-inner-form" style="padding: 15px;" source="custom" redirect="true">
+                          <div class="u-form-group">
+                              <label for="text-7dc7" class="u-form-control-hidden u-label"></label>
+                              <input type="text" id="text-7dc7" name="city" class="u-border-1 u-border-grey-30 u-custom-color-3 u-input u-input-rectangle u-input-3" placeholder="город">
+                          </div>
+                          <div class="u-form-group">
+                              <label for="text-3727" class="u-form-control-hidden u-label"></label>
+                              <input type="text" placeholder="индификатор страны(п.р:ua)" id="text-3727" name="region" class="u-border-1 u-border-grey-30 u-custom-color-3 u-input u-input-rectangle u-input-4">
+                          </div>
+                          <div class="u-form-group u-form-submit">
+                              <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-custom-color-5 u-hover-custom-color-3 u-radius-25 u-btn-2">поиск</a>
+                              <input type="submit" value="submit" class="u-form-control-hidden">
+                          </div>
+                          <div class="u-form-send-message u-form-send-success">#FormSendSuccess</div>
+                          <div class="u-form-send-error u-form-send-message">#FormSendError</div>
+                          <input type="hidden" value="" name="recaptchaResponse">
+                      </form>
+                  </div>
+              </div>
           </div>
-        </div>
       </div>
     </section>
     

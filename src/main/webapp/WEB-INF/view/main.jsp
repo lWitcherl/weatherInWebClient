@@ -13,7 +13,7 @@
     <meta name="keywords" content="INTUITIVE">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>main</title>
+    <title>Главная</title>
     <link href="${pageContext.request.contextPath}/resources/css/nicepage.css" rel="stylesheet" />
     <link href="${pageContext.request.contextPath}/resources/css/main.css" rel="stylesheet" />
     <script class="u-script" type="text/javascript" src="${pageContext.request.contextPath}/resources/query/jquery.js" defer=""></script>
@@ -50,7 +50,7 @@
         </div>
         <div class="u-custom-menu u-nav-container">
             <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-1-base" href="${pageContext.request.contextPath}" style="padding: 10px 48px;">Главная</a>
-            </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-1-base" style="padding: 10px 48px;">Профиль</a>
+            </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-1-base" style="padding: 10px 48px;" >Профиль</a>
             </li></ul>
         </div>
         <div class="u-custom-menu u-nav-container-collapse">
@@ -58,7 +58,7 @@
                 <div class="u-sidenav-overflow">
                     <div class="u-menu-close"></div>
                     <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="${pageContext.request.contextPath}" style="padding: 10px 48px;">Главная</a>
-                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 48px;">Профиль</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 48px;" >Профиль</a>
                     </li></ul>
                 </div>
             </div>

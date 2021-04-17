@@ -4,7 +4,9 @@ import com.dut.education.entity.CityWeather;
 import com.dut.education.entity.exception.NoSuchCityException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.NestedServletException;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -31,14 +33,19 @@ public class Communication {
         CityWeather cityWeather;
         try {
             cityWeather= restTemplate.getForObject(URL+SIMPLEINF+"/"+var, CityWeather.class);
-        }catch (Exception e ){
+        }catch (HttpClientErrorException e ){
             throw new NoSuchCityException("city by :"+ var +" not found");
         }
         return cityWeather;
     }
 
-    public CityWeather getCityWeather(double lon,double lat){
-        CityWeather cityWeather = restTemplate.getForObject(URL+SIMPLEINF+"/"+lon+"/"+lat, CityWeather.class);
+    public CityWeather getCityWeather(double lon,double lat)throws NoSuchCityException{
+        CityWeather cityWeather;
+        try {
+            cityWeather = restTemplate.getForObject(URL+SIMPLEINF+"/"+lon+"/"+lat, CityWeather.class);
+        }catch (Exception e ){
+            throw new NoSuchCityException("city by :" + lon+ " " +lat +" not found");
+        }
         return cityWeather;
     }
 

@@ -10,7 +10,7 @@
       <meta name="keywords" content="INTUITIVE">
       <meta name="description" content="">
       <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>weather</title>
+    <title>Погода в ${weather.name}</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/nicepage.css" media="screen">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/weather.css" media="screen">
     <script class="u-script" type="text/javascript" src="${pageContext.request.contextPath}/resources/query/jquery.js" defer=""></script>
