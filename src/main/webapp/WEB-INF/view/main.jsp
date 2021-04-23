@@ -72,7 +72,7 @@
             <form action="search" method="GET" class="u-clearfix u-form-custom-backend u-form-horizontal u-form-spacing-10 u-inner-form" style="padding: 10px" source="custom" name="form" redirect="true">
                 <div class="u-form-group u-form-group-1">
                     <label for="email-2555" class="u-form-control-hidden u-label u-label-1"></label>
-                    <input type="text"  placeholder="Введите название города" id="email-2555" name="city" class="u-border-1 u-border-white u-custom-color-3 u-input u-input-rectangle u-radius-50" required="required">
+                    <input type="text"  placeholder="Введите название города" id="email-2555" name="city" class="u-border-1 u-border-white u-custom-color-3 u-input u-input-rectangle u-radius-50" required="required" >
                 </div>
                 <div class="u-align-left u-form-group u-form-submit">
                     <a href="#" class="u-btn u-btn-submit u-button-style u-none u-text-white u-btn-1">
@@ -89,6 +89,14 @@
                 <input type="hidden" value="" name="recaptchaResponse">--%>
             </form>
         </div>
+        <h4 class="u-align-center u-text u-text-palette-1-light-2 u-text-1" ${hidden}>
+          <span class="u-text-grey-25">
+            <span class="u-text-grey-30">
+              <span class="u-text-grey-15">Город не найден, попробуйте</span>
+            </span>:
+          </span>
+            <span class="u-text-palette-1-light-1"><a href="extendedSearch">Расширенный поиск</a></span>
+        </h4>
     </div>
 </section>
 

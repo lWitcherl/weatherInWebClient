@@ -2,13 +2,11 @@ package com.dut.education.controllers;
 
 import com.dut.education.Communication;
 import com.dut.education.entity.CityWeather;
-import com.dut.education.entity.exception.ExceptionInfo;
+import com.dut.education.entity.exception.NoSuchCityByCordException;
 import com.dut.education.entity.exception.NoSuchCityException;
 import com.dut.education.translators.TranslatorHandler;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -23,12 +21,13 @@ public class Controller {
    }
 
     @GetMapping("/")
-    public String startPage(){
+    public String startPage(Model model) {
+        model.addAttribute("hidden","hidden");
         return "main";
     }
 
     @GetMapping("/search")
-    public String search(HttpServletRequest request,Model model) throws NoSuchCityException{
+    public String search(HttpServletRequest request,Model model) throws NoSuchCityException, NoSuchCityByCordException {
         CityWeather cityWeather;
         if(request.getParameter("lon")!=null){
             double lon = Double.parseDouble(request.getParameter("lon").replace(",","."));
@@ -49,8 +48,7 @@ public class Controller {
 
 
     @GetMapping("/extendedSearch")
-    public String extendSearch(Model model){
-       model.addAttribute("hidden","hidden");
+    public String extendSearch(){
        return "extendedSearch";
     }
 

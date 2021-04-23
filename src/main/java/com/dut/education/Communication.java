@@ -1,6 +1,7 @@
 package com.dut.education;
 
 import com.dut.education.entity.CityWeather;
+import com.dut.education.entity.exception.NoSuchCityByCordException;
 import com.dut.education.entity.exception.NoSuchCityException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -39,12 +40,12 @@ public class Communication {
         return cityWeather;
     }
 
-    public CityWeather getCityWeather(double lon,double lat)throws NoSuchCityException{
+    public CityWeather getCityWeather(double lon,double lat)throws NoSuchCityByCordException{
         CityWeather cityWeather;
         try {
             cityWeather = restTemplate.getForObject(URL+SIMPLEINF+"/"+lon+"/"+lat, CityWeather.class);
         }catch (Exception e ){
-            throw new NoSuchCityException("city by :" + lon+ " " +lat +" not found");
+            throw new NoSuchCityByCordException("city by :" + lon+ " " +lat +" not found");
         }
         return cityWeather;
     }

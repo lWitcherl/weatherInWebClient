@@ -75,11 +75,11 @@
                       <form action="search" method="get" class="u-clearfix u-form-custom-backend u-form-horizontal u-form-spacing-15 u-inner-form" style="padding: 15px;" source="custom" redirect="true">
                           <div class="u-form-group u-form-name">
                               <label for="name-ef64" class="u-form-control-hidden u-label">Name</label>
-                              <input type="text" placeholder="долгота" id="name-ef64" name="lon" class="u-border-1 u-border-grey-30 u-custom-color-3 u-input u-input-rectangle u-input-1" required="">
+                              <input type="text" placeholder="долгота" pattern="[0-9]{2-3}[.,]{0-1}[0-9]{0-6}" id="name-ef64" name="lon" class="u-border-1 u-border-grey-30 u-custom-color-3 u-input u-input-rectangle u-input-1" required="">
                           </div>
                           <div class="u-form-group">
                               <label for="email-ef64" class="u-form-control-hidden u-label">Email</label>
-                              <input type="text" placeholder="широта" id="email-ef64" name="lat" class="u-border-1 u-border-grey-30 u-custom-color-3 u-input u-input-rectangle u-input-2" required="required">
+                              <input type="text" placeholder="широта" pattern="[0-9]{2-3}[.,]{0-1}[0-9]{0-6}" id="email-ef64" name="lat" class="u-border-1 u-border-grey-30 u-custom-color-3 u-input u-input-rectangle u-input-2" required="required">
                           </div>
                           <div class="u-form-group u-form-submit">
                               <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-custom-color-5 u-hover-custom-color-3 u-radius-25 u-btn-1">поиск</a>
