@@ -1,27 +1,42 @@
-<%--<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>--%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+Registration<br>
+<form:form action="registration" method="post" modelAttribute="user">
+    <form:input path="username" placeholder="login"/><br>
+    <form:input path="email" placeholder="email"/><br>
+    <form:input path="password" placeholder="password"/><br>
+    <input type="submit" placeholder="registration">
+</form:form>
 
+</body>
+--%>
+
+
+</html>
 <!DOCTYPE html>
 <html style="font-size: 16px;">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="INTUITIVE">
+    <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>Главная</title>
-    <link href="${pageContext.request.contextPath}/resources/css/nicepage.css" rel="stylesheet" />
-    <link href="${pageContext.request.contextPath}/resources/css/main.css" rel="stylesheet" />
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/n.css" media="screen">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/registr.css" media="screen">
     <script class="u-script" type="text/javascript" src="${pageContext.request.contextPath}/resources/query/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="${pageContext.request.contextPath}/resources/query/nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 3.11.0, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
 
-    <meta property="og:title" content="main">
+    <meta property="og:title" content="registr">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#478ac9">
     <link rel="canonical" href="${pageContext.request.contextPath}">
@@ -42,7 +57,7 @@
         </div>
         <div class="u-custom-menu u-nav-container">
             <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-1-base" href="${pageContext.request.contextPath}" style="padding: 10px 48px;">Главная</a>
-            </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-1-base" style="padding: 10px 48px;" href="${pageContext.request.contextPath}/profile" >Профиль</a>
+            </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-1-base"  href="${pageContext.request.contextPath}/profile" style="padding: 10px 48px;">Профиль</a>
             </li></ul>
         </div>
         <div class="u-custom-menu u-nav-container-collapse">
@@ -50,7 +65,7 @@
                 <div class="u-sidenav-overflow">
                     <div class="u-menu-close"></div>
                     <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="${pageContext.request.contextPath}" style="padding: 10px 48px;">Главная</a>
-                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 48px;" href="${pageContext.request.contextPath}/profile" >Профиль</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="${pageContext.request.contextPath}/profile" style="padding: 10px 48px;">Профиль</a>
                     </li></ul>
                 </div>
             </div>
@@ -58,42 +73,44 @@
         </div>
     </nav>
 </div></header>
-<section class="u-align-left u-clearfix u-image u-section-1" id="sec-f06b" data-image-width="1600" data-image-height="1067">
+<section class="u-clearfix u-image u-section-1" id="sec-5b1a" data-image-width="1600" data-image-height="1067">
     <div class="u-clearfix u-sheet u-sheet-1">
+        <h3 class="u-align-center u-text u-text-grey-10 u-text-1">Рег​истрация</h3>
         <div class="u-form u-form-1">
-            <form action="search" method="GET" class="u-clearfix u-form-custom-backend u-form-horizontal u-form-spacing-10 u-inner-form" style="padding: 10px" source="custom" name="form" redirect="true">
+            <form:form action="registration" method="post" modelAttribute="user"  class="u-clearfix u-form-custom-backend u-form-spacing-22 u-form-vertical u-inner-form" style="padding: 8px;" source="custom" name="form" redirect="true">
+           <%-- <form action="#" method="POST" class="u-clearfix u-form-spacing-22 u-form-vertical u-inner-form" style="padding: 8px;" source="custom" name="form">
+                --%>
+                <input type="hidden" id="siteId" name="siteId" value="59126301">
+                <input type="hidden" id="pageId" name="pageId" value="914906149">
                 <div class="u-form-group u-form-group-1">
-                    <label for="email-2555" class="u-form-control-hidden u-label u-label-1"></label>
-                    <input type="text"  placeholder="Введите название города" id="email-2555" name="city" class="u-border-1 u-border-white u-custom-color-3 u-input u-input-rectangle u-radius-50" required="required" >
+                    <label for="text-ab85" class="u-form-control-hidden u-label"></label>
+                    <form:input path="username"  type="text" id="text-ab85" name="text" class="u-border-1 u-border-custom-color-5 u-custom-color-3 u-input u-input-rectangle u-radius-42 u-input-1" placeholder="login(min.5 char lat.)" required="required"/>
                 </div>
-                <div class="u-align-left u-form-group u-form-submit">
-                    <a href="#" class="u-btn u-btn-submit u-button-style u-none u-text-white u-btn-1">
-                        <svg class="u-svg-content" viewBox="0 0 52.966 52.966" x="0px" y="0px" style="width: 1em; height: 1em;"><path d="M51.704,51.273L36.845,35.82c3.79-3.801,6.138-9.041,6.138-14.82c0-11.58-9.42-21-21-21s-21,9.42-21,21s9.42,21,21,21
-	c5.083,0,9.748-1.817,13.384-4.832l14.895,15.491c0.196,0.205,0.458,0.307,0.721,0.307c0.25,0,0.499-0.093,0.693-0.279
-	C52.074,52.304,52.086,51.671,51.704,51.273z M21.983,40c-10.477,0-19-8.523-19-19s8.523-19,19-19s19,8.523,19,19
-	S32.459,40,21.983,40z"></path></svg>
-                        <img>
+                <div class="u-form-group u-form-group-2">
+                    <label for="text-49d0" class="u-form-control-hidden u-label"></label>
+                    <form:input path="email" type="email" placeholder="email" id="text-49d0" name="text-1" class="u-border-1 u-border-custom-color-5 u-custom-color-3 u-input u-input-rectangle u-radius-42 u-input-2" required="required"/>
+                </div>
+                <div class="u-form-group u-form-group-3">
+                    <label for="text-2021" class="u-form-control-hidden u-label"></label>
+                    <form:input path="password" type="password" autocomplete="new-password"  placeholder="password(min.8 symbol)" id="text-2021" name="text-2" class="u-border-1 u-border-custom-color-5 u-custom-color-3 u-input u-input-rectangle u-radius-42 u-input-3" required="required"/>
+                </div>
+                <div class="u-align-center u-form-group u-form-submit">
+                    <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-radius-50 u-btn-1">Регистрация<br>
                     </a>
                     <input type="submit" value="submit" class="u-form-control-hidden">
                 </div>
+            </form:form>
 
-            </form>
         </div>
-        <h4 class="u-align-center u-text u-text-palette-1-light-2 u-text-1" ${hidden}>
-          <span class="u-text-grey-25">
-            <span class="u-text-grey-30">
-              <span class="u-text-grey-15">Город не найден, попробуйте</span>
-            </span>:
-          </span>
-            <span class="u-text-palette-1-light-1"><a href="extendedSearch">Расширенный поиск</a></span>
-        </h4>
     </div>
 </section>
 
 
-<footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-aed7"><div class="u-clearfix u-sheet u-sheet-1">
-    <p class="u-small-text u-text u-text-variant u-text-1">Сайт для просмотра текущей информации по погоде.<br>Все права не защищены :)
-    </p>
-</div></footer>
+<footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-aed7">
+    <div class="u-clearfix u-sheet u-sheet-1">
+    <p class="u-small-text u-text u-text-variant u-text-1">Сайт для просмотра текущей информации по погоде.<br>Все права не защищены :)</p>
+</div>
+</footer>
+
 </body>
 </html>

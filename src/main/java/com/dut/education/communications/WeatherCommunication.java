@@ -1,28 +1,26 @@
-package com.dut.education;
+package com.dut.education.communications;
 
 import com.dut.education.entity.CityWeather;
 import com.dut.education.entity.exception.NoSuchCityByCordException;
 import com.dut.education.entity.exception.NoSuchCityException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.NestedServletException;
 
-import java.io.FileInputStream;
-import java.io.IOException;
+
 import java.util.Properties;
 @Component
-public class Communication {
+public class WeatherCommunication {
     private RestTemplate restTemplate;
-    private Properties p = new Properties();
+    private Properties properties;
     private final String URL ;
     private final String SIMPLEINF = "api/cityweather";
 
-    Communication() throws IOException {
-        String part = Communication.class.getClassLoader().getResource("webSetting.properties").getPath();
-        p.load(new FileInputStream(part));
-        URL = p.getProperty("URL");
+    WeatherCommunication(@Qualifier("setting")Properties properties) {
+        this.properties = properties;
+        URL = this.properties.getProperty("URL");
     }
 
     @Autowired
@@ -36,6 +34,15 @@ public class Communication {
             cityWeather= restTemplate.getForObject(URL+SIMPLEINF+"/"+var, CityWeather.class);
         }catch (HttpClientErrorException e ){
             throw new NoSuchCityException("city by :"+ var +" not found");
+        }
+        return cityWeather;
+    }
+    public CityWeather getCityWeatherById(int id) {
+        CityWeather cityWeather;
+        try {
+            cityWeather= restTemplate.getForObject(URL+SIMPLEINF+"/"+id, CityWeather.class);
+        }catch (HttpClientErrorException e ){
+            cityWeather = null;
         }
         return cityWeather;
     }

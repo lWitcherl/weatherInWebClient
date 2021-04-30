@@ -11,12 +11,23 @@ import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.handler.AbstractHandlerMapping;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.List;
+import java.util.Properties;
 
 @Configuration
 @ComponentScan("com.dut.education")
 @EnableWebMvc
 public class SpringConfig implements WebMvcConfigurer {//extends WebMvcConfigurationSupport{//WebMvcConfigurerAdapter
+
+    @Bean(name = "setting")
+    public Properties settingProperties() throws IOException {
+        Properties properties = new Properties();
+        String part = SpringConfig.class.getClassLoader().getResource("webSetting.properties").getPath();
+        properties.load(new FileInputStream(part));
+        return properties ;
+    }
     @Bean
     public RestTemplate getRestTemplate(){
         return new RestTemplate();

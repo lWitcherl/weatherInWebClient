@@ -11,9 +11,8 @@ public class TranslatorHandlerImp implements TranslatorHandler{
     public String reformatTypeCharacters (String city){
         String typeCharacters = defineTypeCharacters(city);
         if(typeCharacters!="lat"){
-            System.out.println("-------------");
-        Transliterator toLatinTrans = Transliterator.getInstance(typeCharacters);
-        return toLatinTrans.transliterate(city);
+            Transliterator toLatinTrans = Transliterator.getInstance(typeCharacters);
+            return toLatinTrans.transliterate(city);
         }
         return city;
     }

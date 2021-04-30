@@ -19,14 +19,7 @@
     <meta name="generator" content="Nicepage 3.11.0, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     
-    
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "Site1",
-		"url": "index.html",
-		"logo": "images/image1.png"
-}</script>
+
     <meta property="og:title" content="extendedSearch">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#478ac9">
@@ -48,7 +41,7 @@
           </div>
           <div class="u-custom-menu u-nav-container">
             <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-1-base" href="${pageContext.request.contextPath}" style="padding: 10px 48px;">Главная</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-1-base" style="padding: 10px 48px;">Профиль</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-1-base"  href="${pageContext.request.contextPath}/profile" style="padding: 10px 48px;">Профиль</a>
 </li></ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
@@ -56,7 +49,7 @@
               <div class="u-sidenav-overflow">
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="${pageContext.request.contextPath}" style="padding: 10px 48px;">Главная</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 48px;">Профиль</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="${pageContext.request.contextPath}/profile" style="padding: 10px 48px;">Профиль</a>
 </li></ul>
               </div>
             </div>
@@ -105,9 +98,7 @@
                               <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-custom-color-5 u-hover-custom-color-3 u-radius-25 u-btn-2">поиск</a>
                               <input type="submit" value="submit" class="u-form-control-hidden">
                           </div>
-                          <div class="u-form-send-message u-form-send-success">#FormSendSuccess</div>
-                          <div class="u-form-send-error u-form-send-message">#FormSendError</div>
-                          <input type="hidden" value="" name="recaptchaResponse">
+
                       </form>
                   </div>
               </div>
