@@ -1,9 +1,9 @@
-<%--<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>--%>
+<%@ page import="org.springframework.security.core.context.SecurityContextHolder" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-
-
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 
 <!DOCTYPE html>
 <html style="font-size: 16px;">
@@ -43,6 +43,9 @@
         <div class="u-custom-menu u-nav-container">
             <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-1-base" href="${pageContext.request.contextPath}" style="padding: 10px 48px;">Главная</a>
             </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-1-base" style="padding: 10px 48px;" href="${pageContext.request.contextPath}/profile" >Профиль</a>
+            </li><li class="u-nav-item" ${aut}><a class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-1-base" href="${pageContext.request.contextPath}/access/registration" style="padding: 10px 48px;">Регистрация</a>
+                <security:authorize url="/profile"></li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-1-base" href="${pageContext.request.contextPath}/logout" style="padding: 10px 48px;">Выйти</a></security:authorize>
+
             </li></ul>
         </div>
         <div class="u-custom-menu u-nav-container-collapse">
@@ -51,6 +54,8 @@
                     <div class="u-menu-close"></div>
                     <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="${pageContext.request.contextPath}" style="padding: 10px 48px;">Главная</a>
                     </li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 48px;" href="${pageContext.request.contextPath}/profile" >Профиль</a>
+                    </li><li class="u-nav-item" ${aut}><a class="u-button-style u-nav-link" href="${pageContext.request.contextPath}/access/registration" style="padding: 10px 48px;">Регистрация</a>
+                        <security:authorize url="/profile"></li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="${pageContext.request.contextPath}/logout" style="padding: 10px 48px;">Выйти</a></security:authorize>
                     </li></ul>
                 </div>
             </div>

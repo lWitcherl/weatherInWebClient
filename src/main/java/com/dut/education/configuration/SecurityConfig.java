@@ -33,6 +33,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/","/search","/extendedSearch","/access/**","/addcity").permitAll()
                 .antMatchers("/profile").authenticated()
                 .and()
-                .formLogin().defaultSuccessUrl("/");
+                .formLogin().defaultSuccessUrl("/")
+                .and()
+                .logout().logoutSuccessUrl("/");
     }
 }

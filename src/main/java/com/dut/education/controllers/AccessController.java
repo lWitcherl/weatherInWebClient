@@ -5,14 +5,13 @@ import com.dut.education.entity.UserInfo;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.Collection;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import javax.validation.Valid;
 
 
 @Controller()
@@ -32,7 +31,10 @@ public class AccessController {
         return "registration";
     }
     @PostMapping("/registration")
-    public String registrationPost(@ModelAttribute("user") UserInfo userInfo){
+    public String registrationPost(@Valid @ModelAttribute("user") UserInfo userInfo, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return "registration";
+        }
         userInfo.setPassword(bCryptPasswordEncoder.encode(userInfo.getPassword()));
         userCommunication.saveNewUser(userInfo);
         return "redirect:/login";

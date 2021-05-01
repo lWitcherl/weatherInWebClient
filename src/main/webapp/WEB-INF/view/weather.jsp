@@ -1,6 +1,6 @@
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
@@ -41,6 +41,7 @@
           <div class="u-custom-menu u-nav-container">
             <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-1-base" href="${pageContext.request.contextPath}" style="padding: 10px 48px;">Главная</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-1-base" style="padding: 10px 48px;" href="${pageContext.request.contextPath}/profile">Профиль</a>
+                <security:authorize url="/profile"></li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-1-base" href="${pageContext.request.contextPath}/logout" style="padding: 10px 48px;">Выйти</a></security:authorize>
 </li></ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
@@ -49,6 +50,7 @@
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="${pageContext.request.contextPath}" style="padding: 10px 48px;">Главная</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 48px;" href="${pageContext.request.contextPath}/profile">Профиль</a>
+                    <security:authorize url="/profile"></li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="${pageContext.request.contextPath}/logout" style="padding: 10px 48px;">Выйти</a></security:authorize>
 </li></ul>
               </div>
             </div>
@@ -74,19 +76,19 @@
                       <h4 class="u-align-center u-text u-text-grey-15 u-text-4">По ощущениям ${weather.feelsLike}C</h4>
                       <h4 class="u-align-center u-text u-text-grey-15 u-text-5">Влажность ${weather.humidity}%</h4>
                       <h4 class="u-align-center u-text u-text-grey-15 u-text-5">Осадки ${weather.precipitation}mm</h4>
-
-                      <h4 class="u-align-center u-text u-text-grey-15 u-text-5">
-                          <form action="${pageContext.request.contextPath}/addcity" method="get">
-                              <input type="hidden" value="${weather.cityId}" name="id" />
-                              <input type="submit"  value="Добавить в избранное" style=" width:150px ;height:40px;
-                                                                              border-radius:20px;
-                                                                              background:#459DE5;
-                                                                              color:#fff;
-                                                                              font-size:18px;
-                                                                              cursor:pointer;">
-                          </form>
-                      </h4>
-
+                        <security:authorize url="/profile">
+                        <h4 class="u-align-center u-text u-text-grey-15 u-text-5">
+                              <form action="${pageContext.request.contextPath}/addcity" method="get">
+                                  <input type="hidden" value="${weather.cityId}" name="id" />
+                                  <input type="submit"  value="Добавить в избранное" style=" width:150px ;height:40px;
+                                                                                  border-radius:20px;
+                                                                                  background:#459DE5;
+                                                                                  color:#fff;
+                                                                                  font-size:18px;
+                                                                                  cursor:pointer;">
+                              </form>
+                          </h4>
+                        </security:authorize>
 
                     </div>
                   </div>

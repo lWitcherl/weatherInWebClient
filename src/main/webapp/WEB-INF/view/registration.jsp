@@ -1,23 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-Registration<br>
-<form:form action="registration" method="post" modelAttribute="user">
-    <form:input path="username" placeholder="login"/><br>
-    <form:input path="email" placeholder="email"/><br>
-    <form:input path="password" placeholder="password"/><br>
-    <input type="submit" placeholder="registration">
-</form:form>
-
-</body>
---%>
-
 
 </html>
 <!DOCTYPE html>
@@ -78,21 +61,23 @@ Registration<br>
         <h3 class="u-align-center u-text u-text-grey-10 u-text-1">Рег​истрация</h3>
         <div class="u-form u-form-1">
             <form:form action="registration" method="post" modelAttribute="user"  class="u-clearfix u-form-custom-backend u-form-spacing-22 u-form-vertical u-inner-form" style="padding: 8px;" source="custom" name="form" redirect="true">
-           <%-- <form action="#" method="POST" class="u-clearfix u-form-spacing-22 u-form-vertical u-inner-form" style="padding: 8px;" source="custom" name="form">
-                --%>
+
                 <input type="hidden" id="siteId" name="siteId" value="59126301">
                 <input type="hidden" id="pageId" name="pageId" value="914906149">
                 <div class="u-form-group u-form-group-1">
                     <label for="text-ab85" class="u-form-control-hidden u-label"></label>
                     <form:input path="username"  type="text" id="text-ab85" name="text" class="u-border-1 u-border-custom-color-5 u-custom-color-3 u-input u-input-rectangle u-radius-42 u-input-1" placeholder="login(min.5 char lat.)" required="required"/>
+                    <form:errors path="username"/>
                 </div>
                 <div class="u-form-group u-form-group-2">
                     <label for="text-49d0" class="u-form-control-hidden u-label"></label>
                     <form:input path="email" type="email" placeholder="email" id="text-49d0" name="text-1" class="u-border-1 u-border-custom-color-5 u-custom-color-3 u-input u-input-rectangle u-radius-42 u-input-2" required="required"/>
+                    <form:errors path="email"/>
                 </div>
                 <div class="u-form-group u-form-group-3">
                     <label for="text-2021" class="u-form-control-hidden u-label"></label>
                     <form:input path="password" type="password" autocomplete="new-password"  placeholder="password(min.8 symbol)" id="text-2021" name="text-2" class="u-border-1 u-border-custom-color-5 u-custom-color-3 u-input u-input-rectangle u-radius-42 u-input-3" required="required"/>
+                    <form:errors path="password"/>
                 </div>
                 <div class="u-align-center u-form-group u-form-submit">
                     <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-radius-50 u-btn-1">Регистрация<br>
